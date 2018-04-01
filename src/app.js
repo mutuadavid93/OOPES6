@@ -32,15 +32,22 @@ let objectVar = new ClassName();
 class Drone {
     constructor(id, name) {
         // "this" refers to the Instance being Created e.g. drone
+        // NB: in this.id, the id is an instance property.
         this.id = id;
         this.name = name;
     }
 }
 
-// Create an Instance (Object) of Drone Class.
+// Add a Static Property( e.g. maxHeight ) directly into the Drone Class;
+Drone.maxHeight = 2000;
+
+// Create an Instance ( Object ) of Drone Class.
 let drone = new Drone("A347", "Flyer");
 
 console.log(typeof drone); // Object
 console.log(drone instanceof Drone); // true
 
 console.log(`drone: ${drone.id} ${drone.name}`);
+
+// Access a Static Class Property
+console.log(`MaxHeight: ${Drone.maxHeight}`);
