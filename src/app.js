@@ -36,6 +36,19 @@ class Drone {
         this.id = id;
         this.name = name;
     }
+    
+    moveRotors() {
+        return `rotors are moving`;
+    }
+    
+    // Create a Method in a Class
+    fly() {
+        // NB: Always use "this" keyword with the Property name. e.g. this.id
+        console.log(`Drone ${this.id} is flying`);
+        
+        // Use "this" to invoke other Methods on that Class Instance too.
+        console.log(`Drone ${this.id} ${this.moveRotors()}`);
+    }
 }
 
 // Add a Static Property( e.g. maxHeight ) directly into the Drone Class;
@@ -51,3 +64,7 @@ console.log(`drone: ${drone.id} ${drone.name}`);
 
 // Access a Static Class Property
 console.log(`MaxHeight: ${Drone.maxHeight}`);
+
+
+// Invoke a Class Method;
+drone.fly();
