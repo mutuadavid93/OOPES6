@@ -5,8 +5,12 @@
 
 import {Car} from './Classes/car.js';
 import {Drone} from './Classes/drone.js';
+import {fleet} from './fleet-data.js';
+import {FleetDataService} from './services/fleet-data-service.js';
 
 
-// Instantiate the Child Classes.
-let car = new Car();
-let drone = new Drone();
+// Instantiate our Data Service
+let dataService = new FleetDataService();
+dataService.loadData(fleet);
+
+console.log(dataService.cars);
