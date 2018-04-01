@@ -30,11 +30,17 @@ let objectVar = new ClassName();
 
 // @Example of a Class:
 class Drone {
-    
+    constructor(id, name) {
+        // "this" refers to the Instance being Created e.g. drone
+        this.id = id;
+        this.name = name;
+    }
 }
 
 // Create an Instance (Object) of Drone Class.
-let drone = new Drone();
+let drone = new Drone("A347", "Flyer");
 
 console.log(typeof drone); // Object
 console.log(drone instanceof Drone); // true
+
+console.log(`drone: ${drone.id} ${drone.name}`);
