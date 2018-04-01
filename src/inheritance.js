@@ -7,6 +7,7 @@ class Vehicle {
     // NB: Always Called First when an Instance is Created.
     constructor(licenseNumber) {
         this.licenseNumber = licenseNumber;
+        this.gpsEnabled = true;
         console.log("Vehicle constructor");
     }
     
@@ -26,8 +27,14 @@ class Car extends Vehicle {
     constructor(licenseNumber) {
         
         // Access a Licence Number Stored in a Parent Constructor.
+        // NB: You should Never Define a "this" before super().
+        // super() MUST be the first Statement in a constructor body.
         super(licenseNumber); // call Parent constructor First!!
-        console.log("Car constructor");
+        
+        
+        // But you can Overwrite Inherited Properties after super();
+        // This allows Manipulating Parent General Properties to Child Specifics. 
+        this.gpsEnabled = false;
     }
     
 };
@@ -42,3 +49,4 @@ let c = new Car("BV567");
 
 
 console.log(c.licenseNumber); // BV567
+console.log(c.gpsEnabled); // false
