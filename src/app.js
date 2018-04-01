@@ -37,6 +37,13 @@ class Drone {
         this.name = name;
     }
     
+    // Create a Static Method Directly on Drone Class
+    static getCompany() {
+        // NB: You can't access instance properties inside static Methods.
+        // e.g. this.name returns undefined.
+        console.log("in getCompany Static Method");
+    }
+    
     moveRotors() {
         return `rotors are moving`;
     }
@@ -68,3 +75,7 @@ console.log(`MaxHeight: ${Drone.maxHeight}`);
 
 // Invoke a Class Method;
 drone.fly();
+
+
+// invoke a Static Class Method;
+Drone.getCompany();
